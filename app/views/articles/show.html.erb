@@ -1,0 +1,21 @@
+<%= link_to articles_path do %>
+  <i class="fa-solid fa-arrow-left fa-xl" style="margin-right: 10px;"></i>
+<% end %>
+
+
+<h1>Détails de l'article</h1>
+
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
+
+
+<%= link_to edit_article_path(@article.id) do %>
+  <i class="fa-solid fa-pencil" style="margin-right: 10px;"></i>
+<% end %>
+
+<%= link_to "Delete",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+  style: "margin-right: 10px;"
+
+%>
